@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42cfd1a1-0378-43b9-9c4b-e25fdfa49fa3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sbu/cs/CalculatePi/PiCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sbu/cs/CalculatePi/PiCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sbu/cs/Semaphore/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sbu/cs/Semaphore/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sbu/cs/Semaphore/Operator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sbu/cs/Semaphore/Operator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +19,16 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,29 +49,19 @@
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.PiCalculatorTest.calculateHard">
-    <configuration name="PiCalculatorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;sbu.cs.CalculatePi.PiCalculatorTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+  <component name="RunManager" selected="Application.Controller">
+    <configuration name="Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sbu.cs.Semaphore.Controller" />
+      <module name="Sixth-Assignment-Advanced-Multithreading.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sbu.cs.Semaphore.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="PiCalculatorTest.calculateHard" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -154,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Controller" />
         <item itemvalue="Gradle.PiCalculatorTest.calculateHard" />
         <item itemvalue="Gradle.PiCalculatorTest.calculateHard2" />
         <item itemvalue="Gradle.PiCalculatorTest.calculateNormal" />
         <item itemvalue="Gradle.PiCalculatorTest.calculateSimple" />
-        <item itemvalue="Gradle.PiCalculatorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -170,7 +173,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716046917997</updated>
-      <workItem from="1716046920986" duration="5120000" />
+      <workItem from="1716046920986" duration="6627000" />
     </task>
     <servers />
   </component>

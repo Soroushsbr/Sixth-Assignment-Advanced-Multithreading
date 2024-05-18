@@ -23,7 +23,7 @@ public class PiCalculator {
 //     * @return pi in string format (the string representation of the BigDecimal object)
 //     */
     public static class Calculator implements Runnable{
-        MathContext mc = new MathContext(1000); //todo: what
+        MathContext mc = new MathContext(1000);
         int n;
         int sign;
         public Calculator(int n , int sign) {
