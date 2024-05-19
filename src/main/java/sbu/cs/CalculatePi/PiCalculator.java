@@ -3,6 +3,7 @@ package sbu.cs.CalculatePi;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
@@ -25,20 +26,39 @@ public class PiCalculator {
     public static class Calculator implements Runnable{
         MathContext mc = new MathContext(1000);
         int n;
-        int sign;
-        public Calculator(int n , int sign) {
+        public Calculator(int n) {
             this.n = n;
-            this.sign = sign;
         }
-        // + (-) 4 / (n)(n + 1)(n + 2)
         @Override
         public void run() {
-            BigDecimal sign = new BigDecimal(this.sign);
-            BigDecimal numerator = new BigDecimal(4);
-            numerator = numerator.multiply(sign , mc);
-            BigDecimal denominator = new BigDecimal(n * (n + 1) * (n + 2));
+            //previous code I used:
+//            BigDecimal sign = new BigDecimal(this.sign);
+//            BigDecimal numerator = new BigDecimal(4);
+//            numerator = numerator.multiply(sign , mc);
+//            BigDecimal denominator = new BigDecimal(n * (n + 1) * (n + 2));
+//
+//            BigDecimal result = numerator.divide(denominator , mc);
+//            addToSum(result);
+            BigDecimal denominator1 = new BigDecimal(8*n + 1);
+            BigDecimal denominator2 = new BigDecimal(8*n + 4);
+            BigDecimal denominator3 = new BigDecimal(8*n + 5);
+            BigDecimal denominator4 = new BigDecimal(8*n + 6);
 
-            BigDecimal result = numerator.divide(denominator , mc);
+            BigDecimal numerator1 = new BigDecimal(4);
+            numerator1 = numerator1.divide(denominator1 , mc);
+            BigDecimal numerator2 = new BigDecimal(-2);
+            numerator2 = numerator2.divide(denominator2 , mc);
+            BigDecimal numerator3 = new BigDecimal(-1);
+            numerator3 = numerator3.divide(denominator3 , mc);
+            BigDecimal numerator4 = new BigDecimal(-1);
+            numerator4 = numerator4.divide(denominator4 , mc);
+
+            BigDecimal result = numerator1.add(numerator2);
+            result = result.add(numerator3);
+            result = result.add(numerator4);
+
+            BigDecimal denominator5 = new BigDecimal(16).pow(n);
+            result = result.divide(denominator5);
             addToSum(result);
         }
     }
@@ -51,11 +71,9 @@ public class PiCalculator {
     {
         ExecutorService threadPool = Executors.newFixedThreadPool(10);
         sum = new BigDecimal(0);
-        int sign = 1;
-        for (int n = 2 ; n < 200 ; n+= 2){
-            Calculator task = new Calculator(n ,sign);
+        for (int n = 0 ; n < 1000 ; n ++){
+            Calculator task = new Calculator(n);
             threadPool.execute(task);
-            sign *= -1;
         }
         threadPool.shutdown();
         try{
@@ -64,8 +82,6 @@ public class PiCalculator {
             e.printStackTrace();
         }
         sum = sum.setScale(floatingPoint , RoundingMode.DOWN);
-        BigDecimal three = new BigDecimal(3);
-        sum = sum.add(three);
         return sum.toString();
     }
 
@@ -74,6 +90,6 @@ public class PiCalculator {
         System.out.print("Floating Point: ");
         int floatingPoint =  scanner.nextInt();
         PiCalculator piCalculator = new PiCalculator();
-        System.out.println(piCalculator.calculate(floatingPoint));
+        System.out.println("π: " + piCalculator.calculate(floatingPoint));
     }
 }
